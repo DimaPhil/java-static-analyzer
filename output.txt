@@ -1,50 +1,61 @@
 Analyzing samples/sub/A.java...
 Code static analyzation failed:
-A:
+Class A:
 Method "foo2" - Handler for empty catch clauses in try/catch constructions:
-Starts at: (21, 11), ends at:(22, 9)
+Starts at: (21, 11), ends at: (22, 9)
 Value: " catch (Throwable exc) {
 }"
+
+
 Code static analyzation failed:
-A:
+Class A:
 Method "foo" - Handler for unused variables:
 Variable b in never being set and get
 Variable c was set, but never used
 
 Method "foo2" - Handler for unused variables:
 Variable a was set, but never used
-A bunch of potential issues found, please fix them.
+
+
 Analyzing samples/sub/sub1/B.java...
 Code static analyzation failed:
-B:
+Class B:
 Method "foo" - Handler for unused variables:
 Variable a was set, but never used
 Variable used was set, but never used
 
 Method "foo2" - Handler for unused variables:
 Variable a was set, but never used
+
+
 Code static analyzation failed:
-B:
+Class B:
 Fields check - Handler for constant variable naming:
 Variable Max is final and static, but its name is not in uppercase
+
+
 Code static analyzation failed:
-B:
+Class B:
 Method "foo" - Handler for unused method argument:
 Variable unused is unused
 
 Method "foo2" - Handler for unused method argument:
 Variable used is unused
-A bunch of potential issues found, please fix them.
+
+
 Analyzing samples/Main.java...
 Code static analyzation failed:
-Main:
+Class Main:
 Method "main" - Handler for empty catch clauses in try/catch constructions:
-Starts at: (16, 11), ends at:(17, 9)
+Starts at: (16, 11), ends at: (17, 9)
 Value: " catch (ArithmeticException e) {
 }"
+
+
 Code static analyzation failed:
-Main:
+Class Main:
 Method "main" - Handler for unused variables:
 Variable a was set, but never used
 Variable c in never being set and get
-A bunch of potential issues found, please fix them.
+
+

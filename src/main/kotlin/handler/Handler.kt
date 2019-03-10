@@ -24,7 +24,7 @@ interface Handler {
     fun printPosition(result: StringBuilder, node: NodeWithRange<Node>) {
         result.append("Starts at: ")
                 .append(positionToString(node.begin.orElse(Position(-1, -1))))
-                .append(", ends at:")
+                .append(", ends at: ")
                 .append(positionToString(node.end.orElse(Position(-1, -1))))
                 .append("\n")
                 .append("Value: \"$node\"")

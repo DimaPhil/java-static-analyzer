@@ -67,18 +67,16 @@ class Walker(private val writer: Writer, private val handlers: List<Handler>) {
                 }
                 if (analyzeResult.isNotEmpty()) {
                     writer.write("""Code static analyzation failed:
-                                    |${getFullyQualifiedName(compilationUnit, classDeclaration)}:
-                                    |$analyzeResult""".trimMargin())
+                                    |Class ${getFullyQualifiedName(compilationUnit, classDeclaration)}:
+                                    |$analyzeResult
+                                    |""".trimMargin())
                     errorFound = true
                 }
             })
         }
-        if (errorFound) {
-            writer.write("A bunch of potential issues found, please fix them.\n")
-        } else {
-            writer.write("OK, no issues found.\n")
+        if (!errorFound) {
+            writer.write("OK, no issues found.\n\n")
         }
-
     }
 
     private fun getFullyQualifiedName(compilationUnit: CompilationUnit, classDeclaration: TypeDeclaration<*>): String {
