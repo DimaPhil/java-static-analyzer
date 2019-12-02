@@ -1,38 +1,38 @@
 # java-static-analyzer
 
-Авторы:
-* Филиппов Дмитрий, М4138
-* Немченко Евгений, М4138
+Authors:
+* Filippov Dmitry, М4138
+* Nemchenko Evgeny, М4138
 
-Поддерживаемые проверки:
+Supported checks:
 
-**Пустые `catch`-блоки**
+**Empty `catch`-blocks**
 
-Ищутся ситуации, где в `try/catch` конструкции тело `catch` пустое, а имя экспешна - не `ignored`.
+We are finding code blocks, where in `try/catch` constructions the `catch` block is empty and the name of the exception is not `ignored`.
 
-**Неиспользуемые переменные**
+**Unused variables**
 
-Ищутся ситуации, где переменная была объявлена, но не используется:
-* объявлена, но не присваивается, и не используется
-* объявлена, присваивается, но не используется
-* объявлена, не присваивается, но используется.
+We are finding code blocks, where the variable was declared, but is not used:
+* is declared, but is not assigned and is not used;
+* is declared, is assigned, but is not used;
+* is declared, not assigned, but used.
 
-**Неправильные имена констант**
+**Incorrect names of constants**
 
-Если переменная в классе объявлена как `final static`, но не в верхнем регистре, будет показан варнинг.
+If a variable in the code was declared as `final static`, but not in the upper case, we will show a warning.
 
-**Неиспользуемые переменные в методах**
+**Unused variables in methods**
 
-Если в методе есть переменная, которая не используется в нем, будет показан варнинг на все такие переменные.
+If some method contains a variable, which is not used in this method, we will show a warning for all such variables.
 
-***Запуск***
+***How to run***
 
 ```bash
 java -jar java-static-analyzer.jar <source root> [<output file>]
 ``` 
 
-По умолчанию файл вывода - `output.txt`.
+The default output file name is `output.txt`.
 
-**Тестирование**
+**Testing**
 
-В папке `samples` лежит несколько примеров программ на Java, на которых мы проверяли нашу утилиту. Утилита не идеальна и может содержать ошибки, а также вывод сообщений об ошибках (самих варнингов) не доработан, но мы надеемся, что это не будет критично :)
+Folder `samples` contains a bunch of code examples on Java, on which we were testing our tool. The tool is far from ideal and may contain several bugs, because was written in a rush. Also, error handling and logging was not fully finished, we hope that's not crucial :)
